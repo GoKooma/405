@@ -20,8 +20,20 @@ $pass = $_POST['pass'];
 
 <html>
 <head>
-<title>BME 405</title>
-<script src="plotly-latest.min.js"></script>
+  <title>BME 405</title>
+  <script src="plotly-latest.min.js"></script>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .container > div {
+      margin: 20px;
+      padding: 20px;
+      width: 200px;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,41 +60,59 @@ $pass = $_POST['pass'];
     onfocus="if(this.value=='AGE'){ this.value=''; this.style.color='#FFF';}" autocapitalize="off">
     <br><br>
     <h1 id = "testDiv">CHOOSE SPRITE</h1>
-    <div class="cc-selector">
-         <input checked="checked" id="sprite1" type="radio" name="spriteNumber" value="1"/>
-         <label class="drinkcard-cc sprite1" for="sprite1"></label>
-         <br>
-         <input id="sprite2" type="radio" name="spriteNumber" value="2" />
-         <label class="drinkcard-cc sprite2"for="sprite2"></label>
-         <br>
-         <input id="sprite3" type="radio" name="spriteNumber" value="9" />
-         <label class="drinkcard-cc sprite3"for="sprite3"></label>
-         <br>
-         <input id="sprite4" type="radio" name="spriteNumber" value="4" />
-         <label class="drinkcard-cc sprite4"for="sprite4"></label>
-         <br>
-         <input id="sprite5" type="radio" name="spriteNumber" value="5" />
-         <label class="drinkcard-cc sprite5"for="sprite5"></label>
-         <br>
-         <input id="sprite6" type="radio" name="spriteNumber" value="6" />
-         <label class="drinkcard-cc sprite6"for="sprite6"></label>
-         <br>
-         <input id="sprite7" type="radio" name="spriteNumber" value="7" />
-         <label class="drinkcard-cc sprite7"for="sprite7"></label>
-         <br>
-         <input id="sprite8" type="radio" name="spriteNumber" value="8" />
-         <label class="drinkcard-cc sprite8"for="sprite8"></label>
-         <br>
-         <input id="sprite9" type="radio" name="spriteNumber" value="9" />
+    <div class="container">
+         <div>
+           <input checked="checked" id="sprite1" type="radio" name="spriteNumber" value="1"/>
+           <label class="drinkcard-cc sprite1" for="sprite1"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite2" type="radio" name="spriteNumber" value="2" />
+           <label class="drinkcard-cc sprite2"for="sprite2"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite3" type="radio" name="spriteNumber" value="9" />
+           <label class="drinkcard-cc sprite3"for="sprite3"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite4" type="radio" name="spriteNumber" value="4" />
+          <label class="drinkcard-cc sprite4"for="sprite4"></label>
+          <br>
+         </div>
+         <div>
+           <input id="sprite5" type="radio" name="spriteNumber" value="5" />
+           <label class="drinkcard-cc sprite5"for="sprite5"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite6" type="radio" name="spriteNumber" value="6" />
+           <label class="drinkcard-cc sprite6"for="sprite6"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite7" type="radio" name="spriteNumber" value="7" />
+           <label class="drinkcard-cc sprite7"for="sprite7"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite8" type="radio" name="spriteNumber" value="8" />
+           <label class="drinkcard-cc sprite8"for="sprite8"></label>
+           <br>
+         </div>
+         <div>
+           <input id="sprite9" type="radio" name="spriteNumber" value="9" />
          <label class="drinkcard-cc sprite9"for="sprite9"></label>
          <br>
-         <input id="sprite10" type="radio" name="spriteNumber" value="10" />
-         <label class="drinkcard-cc sprite10"for="sprite10"></label>
-         <br>
-         <input id="sprite11" type="radio" name="spriteNumber" value="11" />
-         <label class="drinkcard-cc sprite11"for="sprite11"></label>
-
-
+         <div>
+           <input id="sprite10" type="radio" name="spriteNumber" value="10" />
+           <label class="drinkcard-cc sprite10"for="sprite10"></label>
+           <br>
+         <div>
+           <input id="sprite11" type="radio" name="spriteNumber" value="11" />
+           <label class="drinkcard-cc sprite11"for="sprite11"></label>
+         </div>
      </div>
     <input id="button" type="submit" value="REGISTER">
   </form>
