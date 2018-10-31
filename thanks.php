@@ -27,6 +27,12 @@ $statement->execute();
 <html>
 <head>
 <title>BME 405</title>
+<style>
+@font-face {
+  font-family: "Francisco";
+  src: url('/405/SF-Pro-Display-Light.otf');
+}
+</style>
 </head>
 
 <body>
@@ -39,5 +45,23 @@ $statement->execute();
 
 
 </script>
+
+<style>
+body {
+  background: linear-gradient(225deg, #676767, #2f2f2f);
+  color: lightgrey;
+  font-family: 'Francisco', sans-serif;
+  font-weight: 100;
+  margin: 2rem;
+  text-align: center;
+
+}
+
+a {
+  color: lightgrey;
+  font-size: 2rem;
+}
+
+</style>
 
 </html>

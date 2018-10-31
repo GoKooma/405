@@ -34,25 +34,26 @@ for ($j=1;$j<$count;$j++) {
 <head>
 <title>BME 405</title>
 <script src="plotly-latest.min.js"></script>
+<style>
+@font-face {
+  font-family: "Francisco";
+  src: url('/405/SF-Pro-Display-Light.otf');
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
 </head>
 
 <body>
-  <div id="backDiv">
-<div id="tester"></div>
+<img class='jump' src="/405/sprites/<?php echo $result[0]['spriteNumber']; ?>.png" height="200">
+<p class="username"> <?php echo $user;?> </p>
+<div id="backDiv">
+<div id="tester"></div><br>
 
-<form id="form" action="/405/sample.php" method="post">
-  <select name="dateSelection">
-    <?php for ($i=0; $i<$count; $i++) {
-      echo '<option value=' . $result[$i]['id'] . '>' . $result[$i]['date'] . '</option>';
-    }
-    ?>
-  </select>
-  <input id="button" type="submit" value="VIEW">
-</form>
+<div id="newPlayerCard">
 
-<h3>USERNAME: <?php echo $result[0]['username']?></h3>
-<h3>AGE: <?php echo $result[0]['age']?></h3>
-<img src="/405/faces/
+<p class="sectionHeader">Most recent hydrogen rise</p>
+<p class='values'><?php echo $result[$count-1]['ppmRiseTotal']; ?> ppm</p>
+<img height=100px src="/405/faces/
 <?php
 if ($result[$count-1]['ppmRiseTotal'] > 25) {
   echo "3";
@@ -62,6 +63,21 @@ if ($result[$count-1]['ppmRiseTotal'] > 25) {
   echo "1";
 }
  ?>.png">
+<p class="sectionHeader">View individual test results</p>
+ <form id="form" action="/405/sample.php" method="post">
+   <select name="dateSelection">
+     <?php for ($i=0; $i<$count; $i++) {
+       echo '<option value=' . $result[$i]['id'] . '>' . $result[$i]['date'] . '</option>';
+     }
+     ?>
+   </select>
+   <input id="button" type="submit" value="VIEW">
+ </form>
+</div>
+
+
+
+
 
 </body>
 </div>
@@ -91,9 +107,9 @@ marker: {
 var data = [trace1];
 
 var layout = {
-title:'Trend',
+title: 'Recent Trends',
 yaxis: {
-  title: 'H<sub>2</sub> Total Rise (ppm)',
+  title: 'H<sub>2</sub> Total rise (ppm)',
   showgrid: false,
   zeroline: false
 },
@@ -103,10 +119,10 @@ xaxis: {
 font: {
   color: 'lightgrey',
   size: '23',
-  family: 'Courier New',
+  family: 'Francisco',
 },
-plot_bgcolor:'black',
-paper_bgcolor: 'black',
+plot_bgcolor:'rgba(8, 1, 1, 0)',
+paper_bgcolor: 'rgba(8, 1, 1, 0.1)',
 };
 
 Plotly.newPlot(TESTER, data, layout, {displayModeBar: false});
@@ -114,12 +130,102 @@ Plotly.newPlot(TESTER, data, layout, {displayModeBar: false});
 </script>
 
 <style>
+
+
 body {
-  background: black;
+  background: linear-gradient(225deg, #676767, #2f2f2f);
   color: lightgrey;
-  font-family: 'Courier New';
+  font-family: 'Francisco', sans-serif;
+  font-weight: 100;
+  margin: 2rem;
+  text-align: center;
 }
 
+img {
+  margin-bottom: 1.5rem;
+}
+
+#playerCard {
+  width: 50%;
+  text-align: center;
+  font-weight: 200 !important;
+  background: rgba(8, 1, 1, 0.1);
+  padding: 2% 0;
+  float: left;
+
+}
+
+#rightplayerCard {
+  width: 50%;
+  text-align: center;
+  font-weight: 200 !important;
+  background: rgba(8, 1, 1, 0.1);
+  padding: 2% 0;
+  margin-left: 50%;
+}
+
+#playerCard h3 {
+  font-weight: 200 !important;
+  font-size: 4rem;
+}
+
+#tester {
+  width: 100%
+}
+
+.svg-container {
+  width: 100% !important;
+}
+
+.main-svg {
+  width: 100% !important;
+}
+
+@keyframes jump {
+  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+}
+.jump {
+  transform-origin: 50% 50%;
+  animation: jump .5s linear alternate;
+  animation-iteration-count: 4;
+}
+
+#newPlayerCard {
+  text-align: center;
+  font-weight: 100 !important;
+  background: rgba(8, 1, 1, 0.1);
+  padding: 2% 0;
+}
+
+.sectionHeader {
+  font-size: 40px;
+  -webkit-text-size-adjust: none;
+
+}
+
+.values {
+  font-size: 80px;
+  -webkit-text-size-adjust: none;
+  margin-top: 0;
+}
+
+.dateSelection {
+  -webkit-appearance: none;
+  -moz-appearance:        none;
+  -ms-appearance:         none;
+  -o-appearance:          none;
+  appearance:             none;
+  background: black;
+      font-size: 2rem !important;
+}
+
+.username {
+  margin-top: 0;
+  -webkit-text-size-adjust: none;
+  font-size: 40px;
+}
 </style>
 
 </html>
