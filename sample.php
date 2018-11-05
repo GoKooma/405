@@ -21,6 +21,12 @@ $count = count($result);
 <html>
 <head>
 <title>BME 405</title>
+<style>
+@font-face {
+  font-family: "Francisco";
+  src: url('/405/SF-Pro-Display-Light.otf');
+}
+</style>
 <script src="plotly-latest.min.js"></script>
 </head>
 
@@ -58,10 +64,10 @@ xaxis: {
 font: {
   color: 'lightgrey',
   size: '23',
-  family: 'Courier New',
+  family: 'Francisco',
 },
-plot_bgcolor:'black',
-paper_bgcolor: 'black',
+plot_bgcolor:'rgba(8, 1, 1, 0)',
+paper_bgcolor: 'rgba(8, 1, 1, 0.1)',
 };
 
 Plotly.newPlot(TESTER, data, layout, {displayModeBar: false});
@@ -71,7 +77,12 @@ Plotly.newPlot(TESTER, data, layout, {displayModeBar: false});
 <style>
 
 body {
-  background: black;
+  background: linear-gradient(225deg, #676767, #2f2f2f);
+  color: lightgrey;
+  font-family: 'Francisco', sans-serif;
+  font-weight: 100;
+  margin: 2rem;
+  text-align: center;
 }
 
 </style>

@@ -17,6 +17,12 @@ $count = count($result) - 1;
 <html>
 <head>
 <title>BME 405</title>
+<style>
+@font-face {
+  font-family: "Francisco";
+  src: url('/405/SF-Pro-Display-Light.otf');
+}
+</style>
 </head>
 
 <body>
@@ -124,7 +130,7 @@ img {
 body {
   background: linear-gradient(225deg, #676767, #2f2f2f);
   text-align: center;
-  font-family: 'Courier New';
+  font-family: 'Francisco';
   color: white;
 }
 
@@ -138,7 +144,7 @@ input {
   border: none;
   border-bottom: 1px solid white;
   color: white;
-  font-family: 'Courier New';
+  font-family: 'Francisco';
 }
 
 #testDiv {
